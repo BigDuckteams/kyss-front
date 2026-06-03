@@ -2,6 +2,25 @@ export type TaskStatus = 'backlog' | 'todo' | 'in_progress' | 'review' | 'done';
 export type Priority = 'low' | 'medium' | 'high' | 'critical';
 export type Source = 'telegram_text' | 'telegram_voice' | 'meeting_audio';
 
+export const sourceNames: Record<Source, string> = {
+  telegram_text: 'Telegram text',
+  telegram_voice: 'Voice',
+  meeting_audio: 'Meeting',
+};
+
+
+export const sourceTone: Record<Source, string> = {
+  telegram_text: 'border-sky-300/25 bg-sky-400/10 text-sky-100',
+  telegram_voice: 'border-violet-300/25 bg-violet-400/10 text-violet-100',
+  meeting_audio: 'border-emerald-300/25 bg-emerald-400/10 text-emerald-100',
+};
+
+export const priorityTone: Record<Priority, string> = {
+  low: 'from-slate-400 to-slate-500',
+  medium: 'from-cyan-300 to-blue-400',
+  high: 'from-amber-300 to-orange-400',
+  critical: 'from-rose-400 to-fuchsia-500',
+};
 export interface Task {
   id: string;
   title: string;
